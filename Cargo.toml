@@ -1,0 +1,23 @@
+[package]
+name = "log_events"
+version = "0.1.0"
+authors = ["Connor Peticca <cjpet10@gmail.com>", "Jacob Hull <jacob@planethull.com>"]
+edition = "2018"
+
+[dependencies]
+glob = "0.3"
+regex = "1"
+hashbrown = "0.1"
+fsevent = "*"
+log = "0.4"
+lazy_static = "1"
+futures = "0.1"
+tokio = "0.1"
+quick-error = "1.2.2"
+tokio-threadpool = "0.1"
+
+[target.'cfg(target_os="linux")'.dependencies]
+inotify = "0.7"
+
+[target.'cfg(target_os="macos")'.dependencies]
+fsevent = "*"
